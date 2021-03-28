@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { View, Text, StyleSheet, Button, Alert } from "react-native";
 import Card from "../components/Card";
 import NumberContainer from "../components/NumberContainer";
+import Colors from "../constants/colors";
 import language from "../constants/language";
 
 const generateRandomBetween = (min, max, exclude) => {
@@ -46,14 +47,20 @@ const GameScreen = (props) => {
         <Text>{lang.gameScreen.text}</Text>
         <NumberContainer>{currentGuess}</NumberContainer>
         <Card style={styles.buttonsContainer}>
-          <Button
-            title={lang.gameScreen.lower}
-            onPress={nextGuessHandler.bind(this, "lower")}
-          />
-          <Button
-            title={lang.gameScreen.grater}
-            onPress={nextGuessHandler.bind(this, "grater")}
-          />
+          <View style={styles.button}>
+            <Button
+              color={Colors.btnAccent}
+              title={lang.gameScreen.lower}
+              onPress={nextGuessHandler.bind(this, "lower")}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              color={Colors.btnPrimary}
+              title={lang.gameScreen.grater}
+              onPress={nextGuessHandler.bind(this, "grater")}
+            />
+          </View>
         </Card>
       </View>
     );
@@ -70,6 +77,9 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         marginTop: 20,
         width: 300
+    },
+    button: {
+        width: 100
     }
 });
 

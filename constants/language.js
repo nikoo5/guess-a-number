@@ -31,7 +31,7 @@ export default {
       title: "El Juego Terminó!",
       number: "Numero Elegido",
       rounds: "Cantidad de intentos",
-      newgame: "NUEVO JUEGO",
+      new_game: "NUEVO JUEGO",
     },
   },
   us: {
@@ -66,7 +66,7 @@ export default {
       title: "The Game is Over!",
       number: "User number",
       rounds: "Number of rounds",
-      newgame: "NEW GAME",
+      new_game: "NEW GAME",
     },
   },
 };

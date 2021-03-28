@@ -22,7 +22,7 @@ const GameOverScreen = (props) => {
           </View>
           <Button
             color={Colors.btnPrimary}
-            title={lang.gameOverScreen.newgame}
+            title={lang.gameOverScreen.new_game}
             onPress={props.onNewGame}
           />
         </Card>
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     cardContainer: {
-        width: 250,
+        width: 300,
         justifyContent: "center",
         alignItems: "center",
         paddingVertical: 50
