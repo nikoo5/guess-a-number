@@ -1,12 +1,15 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import language from "../constants/language";
 import Colors from "./../constants/colors"
 
 const Header = (props) => {
+    const lang = props.language == "ES" ? language.es : language.us;
+
     return (
-        <View style={styles.header}>
-            <Text style={styles.headerTitle}>{props.title}</Text>
-        </View>
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>{lang.header.title}</Text>
+      </View>
     );
 }
 

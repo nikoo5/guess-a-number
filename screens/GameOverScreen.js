@@ -3,23 +3,26 @@ import { Text, View, StyleSheet, Button } from "react-native";
 import Card from "../components/Card";
 import NumberContainer from "../components/NumberContainer";
 import Colors from "../constants/colors";
+import language from "../constants/language";
 
 const GameOverScreen = (props) => {
+    const lang = props.language == "ES" ? language.es : language.us;
+
     return (
       <View style={styles.screen}>
         <Card style={styles.cardContainer}>
-          <Text style={styles.title}>The Game is Over!</Text>
+          <Text style={styles.title}>{lang.gameOverScreen.title}</Text>
           <View style={styles.numberContainer}>
-            <Text>User number</Text>
+            <Text>{lang.gameOverScreen.number}</Text>
             <NumberContainer color={Colors.Primary}>{props.userNumber}</NumberContainer>
           </View>
           <View style={styles.numberContainer}>
-            <Text>Number of rounds</Text>
+            <Text>{lang.gameOverScreen.rounds}</Text>
             <NumberContainer>{props.roundsNumber}</NumberContainer>
           </View>
           <Button
             color={Colors.btnPrimary}
-            title="NEW GAME"
+            title={lang.gameOverScreen.newgame}
             onPress={props.onNewGame}
           />
         </Card>
